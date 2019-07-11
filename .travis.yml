@@ -22,4 +22,4 @@ jobs:
   include:
     - stage: mutation-test
       jdk: oraclejdk11
-      script: ./gradlew pitest coveralls
+      script: travis_wait 60 ./gradlew pitest coveralls
