@@ -12,7 +12,7 @@ jdk:
   - openjdk11
 
 script:
-  - ./gradlew check assembleJavadoc
+  - ./gradlew check
 
 stages:
   - test
