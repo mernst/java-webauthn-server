@@ -24,6 +24,7 @@
 
 package com.yubico.webauthn.data;
 
+import org.checkerframework.checker.objectconstruction.qual.CalledMethods;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.yubico.internal.util.CollectionUtil;
@@ -218,7 +219,7 @@ public class PublicKeyCredentialCreationOptions {
              * @see PublicKeyCredentialCreationOptions#getPubKeyCredParams()
              */
             public class Step4 {
-                public PublicKeyCredentialCreationOptionsBuilder pubKeyCredParams(List<PublicKeyCredentialParameters> pubKeyCredParams) {
+                public @CalledMethods({"rp", "user", "challenge"}) PublicKeyCredentialCreationOptionsBuilder pubKeyCredParams(List<PublicKeyCredentialParameters> pubKeyCredParams) {
                     return builder.pubKeyCredParams(pubKeyCredParams);
                 }
             }
